@@ -119,6 +119,8 @@ begin
 	-- PROCESSES ------------------------------------------------------------------------------------------	
 	
 	-- State register ------------
+	--I altered the elevator fsm to be asynchronous on the reset becuase
+	--I couldn't find another way to ensure the master switch worked.
 	state_register : process(i_clk)
 	begin
 	    if i_reset = '1' then
