@@ -77,7 +77,7 @@ signal w_Hex : std_logic_vector (3 downto 0) := "0000";
 begin
 	-- PORT MAPS ----------------------------------------
     clock_divider_inst : clock_divider
-     generic map(k_DIV => 12500000)
+     generic map(k_DIV => 25000000)
     port map ( 	i_clk    => clk,
                 i_reset  => w_clk_reset,	   -- asynchronous
                 o_clk    => w_clk );
@@ -105,11 +105,11 @@ begin
 	TDM4_inst : TDM4
         port map( 
            i_clk		=> w_clk2,
-           i_reset => w_clk_reset,
+           i_reset => w_clk_reset2,
            i_D3 => "1111",
-		   i_D2 => w_floor1,
+		   i_D2 => w_floor2,
 		   i_D1 => "1111",
-		   i_D0 => w_floor2,
+		   i_D0 => w_floor1,
 		   o_data => w_Hex,
 		   o_sel  => an
 	   );        
